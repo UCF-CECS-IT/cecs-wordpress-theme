@@ -1,0 +1,76 @@
+//
+// Person lists
+//
+.ucfwp-post-list-people {
+  .person-link {
+    color: $black;
+  }
+
+  .person-photo {
+    height: 0;
+    padding-bottom: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      height: 0;
+      width: 100%;
+    }
+  }
+
+  .person-name {
+    font-size: .85rem;
+  }
+
+  .person-job-title,
+  .person-name,
+  .person-phone,
+  .person-email {
+    font-size: $font-size-xs;
+    line-height: 1.1;
+    margin-bottom: .4em;
+  }
+
+  .person-email {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ucf-post-search .person-photo {
+    height: 4rem;
+    padding-bottom: 0;
+    width: 4rem;
+  }
+}
+
+
+//
+// "News" post lists
+//
+.ucfwp-post-list-news {
+  .newsitem-link {
+    @include hover-focus {
+      text-decoration: none;
+
+      .newsitem-heading {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .newsitem-heading {
+    font-size: $font-size-base-md;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-base-md;
+    }
+  }
+
+  .newsitem-excerpt {
+    font-size: $font-size-xs;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-sm;
+    }
+  }
+}
