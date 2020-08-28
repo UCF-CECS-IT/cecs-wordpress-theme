@@ -120,3 +120,25 @@ function cecs_get_announcements() {
 function cecs_announcement_contents($announcement) {
 	return "<div class=\"alert alert-info py-2 mb-0\" role=\"alert\"><div class=\"container\">{$announcement->post_content}</div></div>";
 }
+
+function cecs_get_all_staff( $filters ) {
+    return new WP_Query( array(
+        'post_type'     => ['people', 'faculty'],
+        'order'         => 'ASC',
+        'orderby'       => 'ID',
+    ));
+}
+
+function cecs_get_staff_filter() {
+    if ( isset($_POST) ) {
+        return $_POST['filters'] ?? null;
+    }
+}
+
+function cecs_alphabetize_staff() {
+
+}
+
+function cecs_directory_search_markup( $post ) {
+    
+}
