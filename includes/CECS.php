@@ -123,9 +123,10 @@ function cecs_announcement_contents($announcement) {
 
 function cecs_get_all_staff( $filters ) {
     return new WP_Query( array(
-        'post_type'     => ['people', 'faculty'],
+        'post_type'     => ['person', 'faculty'],
         'order'         => 'ASC',
         'orderby'       => 'ID',
+        'posts_per_page' => -1
     ));
 }
 
@@ -136,7 +137,25 @@ function cecs_get_staff_filter() {
 }
 
 function cecs_alphabetize_staff( $unorganized ) {
-    return $unorganized->posts;
+    $posts = $unorganized->posts;
+    usort($posts, function($a, $b) {
+        $nameA = cecs_get_order_by_name($a);
+        $nameB = cecs_get_order_by_name($b);
+        return $nameA <=> $nameB;
+      });
+    return $posts;
+}
+
+function cecs_get_order_by_name($post) {
+    if ($post->post_type == 'faculty') {
+        $nameRepeater = get_field('name', $post->ID);
+        $name = $nameRepeater[0];
+        return $name['last'];
+    } else {
+        $nameString = ucfwp_get_person_name( $post );
+        $nameArray = explode(' ', $nameString);
+        return $nameArray[1];
+    }
 }
 
 function cecs_directory_search_markup( $post ) {
