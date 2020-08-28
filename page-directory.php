@@ -5,7 +5,9 @@ get_header();
 cecs_directory_search_markup( get_post() );
 
 $staff = cecs_get_all_staff( cecs_get_staff_filter() );
-$alphabetized = cecs_alphabetize_staff( $staff )
+$alphabetized = cecs_alphabetize_staff( $staff );
+
+var_dump($alphabetized);
 
 ?>
 

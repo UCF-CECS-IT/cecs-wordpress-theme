@@ -135,8 +135,8 @@ function cecs_get_staff_filter() {
     }
 }
 
-function cecs_alphabetize_staff() {
-
+function cecs_alphabetize_staff( $unorganized ) {
+    return $unorganized->posts;
 }
 
 function cecs_directory_search_markup( $post ) {
