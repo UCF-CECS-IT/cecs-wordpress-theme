@@ -1,7 +1,7 @@
 <?php
 
-$memberInfo = get_fields( $post->ID );
-$metaArray = get_metadata( 'post', $post->ID );
+$memberInfo = get_fields( $staffEntry->ID );
+$metaArray = get_metadata( 'post', $staffEntry->ID );
 $positionArray = faculty_get_positions( $metaArray );
 $title = ($metaArray['featured_position'][0] ?? false) ?: faculty_get_display_title($positionArray);
 
@@ -9,9 +9,9 @@ $title = ($metaArray['featured_position'][0] ?? false) ?: faculty_get_display_ti
 
 <div class="row no-gutters">
     <div class="col">
-        <a href="<?php echo get_permalink($post->ID); ?>">
+        <a href="<?php echo get_permalink($staffEntry->ID); ?>">
             <div class="media-background-container person-photo mx-auto rounded box-shadow-soft h-75">
-                <img src="<?php echo faculty_get_photo( $post->id ); ?>" class="media-background object-fit-cover" data-object-fit="cover">
+                <img src="<?php echo faculty_get_photo( $staffEntry->id ); ?>" class="media-background object-fit-cover" data-object-fit="cover">
             </div>
         </a>
     </div>
@@ -29,7 +29,7 @@ $title = ($metaArray['featured_position'][0] ?? false) ?: faculty_get_display_ti
             </div>
         <?php endif; ?>
         <?php if ( $metaArray['email'][0] ?? false ): ?>
-            <div class="person-email"><a href="mailto:<?php echo $metaArray['email'][0]; ?>"><i class="fa fa-email"></i></a></div>
+            <div class="person-email"><a href="mailto:<?php echo $metaArray['email'][0]; ?>"><span class="fa-stack fa-lg text-primary"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></a></div>
         <?php endif; ?>
         <?php if ( $metaArray['phone'][0] ?? false): ?>
             <div class="person-job-title"><?php echo $metaArray['phone'][0] ?? false;?></div>
