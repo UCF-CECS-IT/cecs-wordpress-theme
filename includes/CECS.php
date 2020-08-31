@@ -126,7 +126,7 @@ function cecs_get_all_staff( $filters ) {
         'post_type'     => ['person', 'faculty'],
         'order'         => 'ASC',
         'orderby'       => 'ID',
-        'posts_per_page' => -1
+        'posts_per_page' => 20
     ));
 }
 
