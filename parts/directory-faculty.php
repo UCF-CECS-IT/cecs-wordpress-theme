@@ -1,7 +1,7 @@
 <?php
 
-$memberInfo = get_fields( $staffEntry->ID );
-$metaArray = get_metadata( 'post', $staffEntry->ID );
+$memberInfo = get_fields( $post->ID );
+$metaArray = get_metadata( 'post', $post->ID );
 $positionArray = faculty_get_positions( $metaArray );
 $title = ($metaArray['featured_position'][0] ?? false) ?: faculty_get_display_title($positionArray);
 
@@ -9,9 +9,9 @@ $title = ($metaArray['featured_position'][0] ?? false) ?: faculty_get_display_ti
 
 <div class="row no-gutters">
     <div class="col">
-        <a href="<?php echo get_permalink($staffEntry->ID); ?>">
+        <a href="<?php echo get_permalink($post->ID); ?>">
             <div class="media-background-container person-photo mx-auto rounded box-shadow-soft h-75">
-                <img src="<?php echo faculty_get_photo( $staffEntry->id ); ?>" class="media-background object-fit-cover" data-object-fit="cover">
+                <img src="<?php echo faculty_get_photo( $post->ID ); ?>" class="media-background object-fit-cover" data-object-fit="cover">
             </div>
         </a>
     </div>

@@ -122,18 +122,36 @@ function cecs_announcement_contents($announcement) {
 }
 
 function cecs_get_all_staff( $filters ) {
-    return new WP_Query( array(
+    $parameters = [
         'post_type'     => ['person', 'faculty'],
         'order'         => 'ASC',
         'orderby'       => 'ID',
-        'posts_per_page' => 20
-    ));
+        'posts_per_page' => -1
+    ];
+
+    if ( isset($filters['post_type']) ) {
+        if ($filters['post_type'] != 'all') {
+            $parameters['post_type'] = $filters['post_type'];
+        }
+    }
+
+    if ( isset($filters['department']) ) {
+        $parameters['meta_query'] = [
+            [
+                'key' => 'department',
+                'value' => $filters['department']
+            ]
+        ];
+    }
+
+    return new WP_Query($parameters);
 }
 
 function cecs_get_staff_filter() {
     if ( isset($_POST) ) {
-        return $_POST['filters'] ?? null;
+        print_r($_POST['filters']);
     }
+    return $_POST['filters'] ?? null;
 }
 
 function cecs_alphabetize_staff( $unorganized ) {
@@ -156,8 +174,4 @@ function cecs_get_order_by_name($post) {
         $nameArray = explode(' ', $nameString);
         return $nameArray[1];
     }
-}
-
-function cecs_directory_search_markup( $post ) {
-    
 }
