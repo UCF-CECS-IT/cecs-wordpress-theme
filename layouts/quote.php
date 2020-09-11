@@ -11,7 +11,7 @@
 <section class="layout py-3">
     <?php if(have_rows('content')): ?>
         <?php while(have_rows('content')): the_row(); ?>
-            <blockquote class="blockquote blockquote-reverse blockquote-quotation">
+            <blockquote class="blockquote blockquote-quotation">
                 <p class="mb-0"><?php the_sub_field('text'); ?></p>
                 <footer class="blockquote-footer"><?php the_sub_field('name'); ?> <cite title="Source Title">&#8212; <?php the_sub_field('position'); ?></cite></footer>
             </blockquote>

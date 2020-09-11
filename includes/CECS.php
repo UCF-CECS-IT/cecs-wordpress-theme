@@ -136,22 +136,29 @@ function cecs_get_all_staff( $filters ) {
     }
 
     if ( isset($filters['department']) ) {
-        $parameters['meta_query'] = [
-            [
-                'key' => 'department',
-                'value' => $filters['department']
-            ]
-        ];
+        if ($filters['department'] != 'all') {
+            $parameters['meta_query'] = [
+                [
+                    'key' => 'department',
+                    'value' => $filters['department']
+                ]
+            ];
+        }
     }
 
     return new WP_Query($parameters);
 }
 
 function cecs_get_staff_filter() {
-    if ( isset($_POST) ) {
-        print_r($_POST['filters']);
+    return $_GET['filters'] ?? null;
+}
+
+function cecs_staff_filter_selected($filterType, $filterValue) {
+    if ($_GET['filters'][$filterType] ?? false) {
+        if ($_GET['filters'][$filterType] == $filterValue) {
+            echo 'selected';
+        }
     }
-    return $_POST['filters'] ?? null;
 }
 
 function cecs_alphabetize_staff( $unorganized ) {

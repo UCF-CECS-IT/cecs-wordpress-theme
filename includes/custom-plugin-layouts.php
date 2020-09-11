@@ -114,7 +114,7 @@ if ( class_exists( 'UCF_People_PostType' ) ) {
     function ucfwp_post_list_display_aao( $content, $items, $atts ) {
         if ( ! is_array( $items ) && $items !== false ) { $items = array( $items ); }
         ob_start();
-    ?>
+        ?>
         <?php if ( $items ): ?>
         <ul class="list-unstyled row ucf-post-list-items">
             <?php foreach ( $items as $item ): ?>
@@ -317,4 +317,3 @@ if ( class_exists( 'UCF_People_PostType' ) ) {
 	add_filter( 'ucf_post_list_display_leadership_after', 'ucfwp_post_list_display_leadership_after', 10, 3 );
 
 }
-

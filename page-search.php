@@ -10,19 +10,19 @@ $alphabetized = cecs_alphabetize_staff( $staff );
 ?>
 
 <article class="<?php echo $post->post_status; ?> post-list-item">
-	<div class="container mt-4 mt-sm-5 mb-5 pb-sm-4">
+	<div class="container mt-2 mb-5 pb-sm-4">
 		<div class="row justify-content-end">
 			<div class="col-lg-3 col-md-4">
-				<div class="form-group row">
-					<label for="staffSearch" class="col-sm-4 col-form-label">Search</label>
+				<div class="form-group row align-items-center">
+					<label for="staffSearch" class="col-sm-4 col-form-label pr-0">Search</label>
 					<div class="col-sm-8">
-
+						<input type="text" id="staffSearch" name="staffSearch" class="form-control form-control-sm">
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<table class="table table-sm small table-hover">
+		<table class="table table-sm small table-hover table-responsive">
 			<thead>
 				<tr class="bg-primary">
 					<th>Name</th>
@@ -51,13 +51,13 @@ $alphabetized = cecs_alphabetize_staff( $staff );
 					<?php else: ?>
 						<tr>
 							<td><?php echo ucfwp_get_person_name( $post ); ?></td>
-							<td>N/A</td>
-							<td><?php if ( $job_title = get_field( 'person_jobtitle', $post->ID ) ) echo $job_title; ?></td>
-							<td><?php if ( $phone = get_field( 'person_phone', $post->ID ) ) echo $phone; ?></td>
-							<td><?php if ( $email = get_field( 'person_email', $post->ID ) ) echo "<a href=\"mailto:$email\">Email</a>"; ?></td>
+							<td>Staff</td>
+							<td><?php if ( $job_title = get_field( 'person_jobtitle', $post->ID ) ) { echo $job_title; } ?></td>
+							<td><?php if ( $phone = get_field( 'person_phone', $post->ID ) ) { echo $phone; } ?></td>
+							<td><?php if ( $email = get_field( 'person_email', $post->ID ) ) { echo "<a href=\"mailto:$email\">Email</a>"; } ?></td>
 						</tr>
 					<?php endif; ?>
-				<? endforeach; ?>
+				<?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>
