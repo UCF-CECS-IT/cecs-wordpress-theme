@@ -363,18 +363,35 @@ if ( !function_exists( 'ucf_post_list_display_faculty' ) ) {
 						$positionArray = faculty_get_positions($metaArray);
 						$title = ($metaArray['featured_position'][0] ?? false) ?: faculty_get_display_title($positionArray); 
 					?>
-					<div class="col-lg-2 col-md-3 col-6 mb-3">
-						<div class="card h-100 box-shadow-soft small-hover-zoom">
-							<a class="media-background-container" href="<?php the_permalink($item->ID); ?>">
-								<div class="department-faculty-card">
-									<img class="media-background object-fit-cover" src="<?php echo faculty_get_photo($item->ID); ?>">
-								</div>
-							</a>
-							<div class="py-2 text-center">
-								<a class="text-secondary" href="<?php the_permalink($item->ID); ?>">
-									<h6 class="text-dark"><?php echo faculty_get_faculty_name('short', $item->ID); ?></h6>
-									<span class="text-dark font-italic mt-auto"><?php echo $title; ?></span>
+					<div class="col-lg-4 col-md-6 col-11 mb-3 ucf-post-list-item small-hover-zoom">
+						<div class="row no-gutters">
+							<div class="col">
+								<a href="<?php echo get_permalink($item->ID); ?>">
+									<div class="media-background-container person-photo mx-auto rounded box-shadow-soft h-75">
+										<img src="<?php echo faculty_get_photo( $item->ID ); ?>" class="media-background object-fit-cover" data-object-fit="cover">
+									</div>
 								</a>
+							</div>
+							<div class="col p-2 d-flex flex-column align-items-start">
+								<h3 class="mt-2 mb-1 person-name"><?php echo faculty_get_display_name($metaArray); ?></h3>
+								<?php if ( $title ?? false): ?>
+									<div class="font-italic person-job-title <?php 
+											if (strlen($title) > 20) {
+												echo 'small font-italic';
+											} else {
+												echo 'font-italic';
+											}
+										?>">
+										<?php echo $title; ?>
+									</div>
+								<?php endif; ?>
+								<?php if ( $metaArray['email'][0] ?? false ): ?>
+									<div class="person-email"><a href="mailto:<?php echo $metaArray['email'][0]; ?>"><span class="fa-stack fa-lg text-primary"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></a></div>
+								<?php endif; ?>
+								<?php if ( $metaArray['phone'][0] ?? false): ?>
+									<div class="person-job-title"><?php echo $metaArray['phone'][0] ?? false;?></div>
+								<?php endif; ?>
+								<div class="mt-auto"><a class="btn btn-primary btn-sm font-weight-light" href="<?php echo get_permalink($item->ID); ?>"><small>Profile</small></a></div>
 							</div>
 						</div>
 					</div>
