@@ -103,7 +103,7 @@ if ( class_exists( 'UCF_People_PostType' ) ) {
 				<?php $is_content_empty = ucfwp_is_content_empty( $item->post_content ); ?>
 
 				<!-- Original  -->
-				<!-- <li class="col-6 col-sm-4 col-md-3 col-xl-2 mt-3 mb-2 ucf-post-list-item"> -->
+				<li class="col-6 col-sm-4 col-md-3 col-xl-2 mt-3 mb-2 ucf-post-list-item">
 					<?php if ( ! $is_content_empty ) { ?>
 					<a class="person-link" href="<?php echo get_permalink( $item->ID ); ?>">
 					<?php } ?>
