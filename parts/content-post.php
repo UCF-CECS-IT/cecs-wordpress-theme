@@ -17,7 +17,6 @@ if(get_field('pdf')) { // Currently unused - was used for publications
             <div class="card-img-top card-height-set-4">
                 <a class="h-100" href="<?php the_permalink(); ?>"> 
                     <img class="img-fluid position-relative" src="<?php news_get_thumbnail( get_the_ID(), 'sm'); ?>">
-                    <span class="badge badge-primary position-absolute position-top-right"><?php news_get_badge_tag(); ?></span>
                 </a>
             </div>
             <div class="card-block text-secondary pb-0">
