@@ -24,14 +24,14 @@ $args = [
 
 $metaQuery = new WP_Query( $args );
 
-echo '<pre>';
+//echo '<pre>';
 // print_r($the_query );
-echo '</pre>';
+// echo '</pre>';
 
 ?>
 
 <div class="container">
-    <? the_content(); ?>
+    <? // the_content(); ?>
 
     <table class="table table-mobile">
         <thead>

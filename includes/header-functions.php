@@ -260,12 +260,12 @@ if ( ! function_exists( 'ucfwp_get_header_type' ) ) {
 			$header_type = 'gallery-item';
 		}
 
-		if (get_post_type() == 'post' && $query_count > 1) {
-			$header_type = 'news';
-		}
-
 		if (get_post_type() == 'post' && $query_count = 1) {
 			$header_type = 'post';
+		}
+
+		if ($wp_query->query['pagename'] == 'news') {
+			$header_type = 'news';
 		}
 
 		if (get_page_template_slug() == 'page-templates/page-builder.php') {
@@ -351,7 +351,7 @@ if ( ! function_exists( 'ucfwp_get_header_content_type' ) ) {
 			$content_type = 'faculty';
 		}
 
-		if ($header_type === 'faculty') {
+		if ($header_type === 'news') {
 			$content_type = 'news';
 		}
 

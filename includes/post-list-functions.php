@@ -356,10 +356,10 @@ if ( !function_exists( 'ucf_post_list_display_faculty' ) ) {
 		ob_start();
 	?>
 		<?php if ( $posts ): ?>
-			<div class="row justify-content-center">
+			<div class="row justify-content-center ucf-post-list-items">
 				<?php foreach ( $posts as $item ): ?>
 					<?php 
-						$metaArray = get_metadata('post', get_the_ID());
+						$metaArray = get_metadata('post', $item->ID);
 						$positionArray = faculty_get_positions($metaArray);
 						$title = ($metaArray['featured_position'][0] ?? false) ?: faculty_get_display_title($positionArray); 
 					?>

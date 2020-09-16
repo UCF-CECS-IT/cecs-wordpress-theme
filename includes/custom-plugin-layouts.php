@@ -128,10 +128,10 @@ if ( class_exists( 'UCF_People_PostType' ) ) {
                 <a class="person-link" href="<?php echo get_permalink( $item->ID ); ?>">
                 <?php } ?>
                     <div class="row no-gutters">
-                        <div class="col">
+                        <div class="col-6">
                             <?php echo ucfwp_get_person_thumbnail( $item, 'rounded box-shadow-soft h-75' ); ?>
                         </div>
-                        <div class="col p-2">
+                        <div class="col-6 p-2">
                             <h3 class="mt-2 mb-1 person-name"><?php echo ucfwp_get_person_name( $item ); ?></h3>
                             <?php if ( $job_title = get_field( 'person_jobtitle', $item->ID ) ): ?>
                             <div class="font-italic person-job-title">
@@ -141,7 +141,7 @@ if ( class_exists( 'UCF_People_PostType' ) ) {
                             <?php if ( $email = get_field( 'person_email', $item->ID ) ): ?>
                             <div class="person-email">
                                 <?php if ( $is_content_empty ) { ?>
-                                <a href="mailto:<?php echo $email; ?>">
+                                <a style="word-break:break-word" href="mailto:<?php echo $email; ?>">
                                 <?php } ?>
                                 <?php echo $email; ?>
                                 <?php if ( $is_content_empty ) { ?>

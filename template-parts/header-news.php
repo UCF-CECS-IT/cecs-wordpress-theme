@@ -26,7 +26,14 @@ $exclude_nav         = get_field( 'page_header_exclude_nav', $obj );
 	?>
 	<div class="header-content">
 		<div class="header-content-flexfix">
-			<?php echo ucfwp_get_header_content_markup(); ?>
+            <div class="header-content-inner align-self-start pt-4 pt-sm-0 align-self-sm-center">
+                <div class="container">
+                    <div class="d-inline-block bg-primary-t-1">
+						<h2 class="header-title">CECS News</h2>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
 		</div>
 	</div>
 
