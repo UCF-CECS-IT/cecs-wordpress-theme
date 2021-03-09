@@ -64,3 +64,5 @@ if ( class_exists( 'UCF_Acad_Cal_Common' ) ) {
 if ( class_exists( 'UCF_Post_List_Common' ) ) {
 	include_once UCFWP_THEME_DIR . 'includes/post-list-functions.php';
 }
+
+add_filter( 'http_request_host_is_external', '__return_true' );
