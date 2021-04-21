@@ -45,7 +45,9 @@ function ucf_post_list_display_cecs( $content, $posts, $atts ) {
         ?>
             <div class="ucf-post-list-card">
                 <a class="ucf-post-list-card-link" href="<?php echo get_permalink( $item->ID ); ?>">
-                    <img src="<?php news_get_thumbnail( $item->ID, 'sm' ); ?>" class="ucf-post-list-thumbnail-image" alt="<?php echo $item->post_title; ?>">
+                    <div class="aspect-ratio-box">
+                        <img src="<?php news_get_thumbnail( $item->ID, 'sm' ); ?>" class="ucf-post-list-thumbnail-image" alt="<?php echo $item->post_title; ?>">
+                    </div>
                     <div class="ucf-post-list-card-block">
                         <h3 class="ucf-post-list-card-title"><?php echo $item->post_title; ?></h3>
                         <p class="ucf-post-list-card-text"><?php echo $date; ?></p>
