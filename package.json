@@ -26,5 +26,8 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
 }
