@@ -268,7 +268,7 @@ if ( ! function_exists( 'ucfwp_post_list_display_news' ) ) {
 								<?php if ( $item_img ) : ?>
 									<img src="<?php echo $item_img; ?>" srcset="<?php echo $item_img_srcset; ?>" class="ucf-post-list-thumbnail-image img-fluid" alt="">
 								<?php else: ?>
-									<img src="<?php news_get_thumbnail(get_field( 'page_header_image'), 'thumbnail'); ?>" class="ucf-post-list-thumbnail-image img-fluid" alt="">
+									<img src="<?php news_get_thumbnail($item->ID, 'thumbnail'); ?>" class="ucf-post-list-thumbnail-image img-fluid" alt="">
 								<?php endif; ?>
 							</div>
 

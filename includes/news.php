@@ -15,14 +15,18 @@ function news_get_thumbnail($id, $size) {
         return;
     }
 
-    $default = get_the_post_thumbnail_url($id);
+    $default = get_the_post_thumbnail_url($id, 'thumbnail');
 
     if ($default) {
         echo $default;
         return;
     }
 
-    $fallback = get_stylesheet_directory_uri() . '/static/img/fallback-narrow.jpg';
+    if ($size == 'thumbnail') {
+        $fallback = get_stylesheet_directory_uri() . '/static/img/fallback-thumbnail.jpg';
+    } else {
+        $fallback = get_stylesheet_directory_uri() . '/static/img/fallback-narrow.jpg';
+    }
 
     // Returns a fallback placeholder image
     echo $fallback;
