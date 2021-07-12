@@ -250,10 +250,6 @@ if ( ! function_exists( 'ucfwp_post_list_display_news' ) ) {
 				$item_img_srcset = UCF_Post_List_Common::get_image_srcset( $item, 'thumbnail' );
 			}
 
-			if (!$item_img) {
-				$item_img = news_get_thumbnail(get_field( 'page_header_image'), 'thumbnail');
-			}
-
 			if ( $atts['posts_per_row'] > 0 && $index !== 0 && ( $index % $atts['posts_per_row'] ) === 0 ) {
 				echo '</div><div class="row">';
 			}
@@ -268,11 +264,13 @@ if ( ! function_exists( 'ucfwp_post_list_display_news' ) ) {
 					<?php endif; ?>
 
 						<div class="row">
-							<?php if ( $item_img ) : ?>
 							<div class="col-3 col-md-2 pr-0">
-								<img src="<?php echo $item_img; ?>" srcset="<?php echo $item_img_srcset; ?>" class="ucf-post-list-thumbnail-image img-fluid" alt="">
+								<?php if ( $item_img ) : ?>
+									<img src="<?php echo $item_img; ?>" srcset="<?php echo $item_img_srcset; ?>" class="ucf-post-list-thumbnail-image img-fluid" alt="">
+								<?php else: ?>
+									<img src="<?php news_get_thumbnail(get_field( 'page_header_image'), 'thumbnail'); ?>" class="ucf-post-list-thumbnail-image img-fluid" alt="">
+								<?php endif; ?>
 							</div>
-							<?php endif; ?>
 
 							<div class="col">
 								<h3 class="newsitem-heading"><?php echo $item_title; ?></h3>
