@@ -8,5 +8,5 @@ $exclude_nav = get_field( 'page_header_exclude_nav', $obj );
 
 <?php echo ucfwp_get_header_content_markup(); ?>
 
-<?php echo cecs_get_subnav_markup(); ?>
+
 

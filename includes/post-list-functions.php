@@ -17,6 +17,9 @@ if ( ! function_exists( 'ucfwp_post_list_layouts' ) ) {
 		$layouts['faculty'] = 'Department Faculty Cards';
 		$layouts['cecs'] = 'CECS News Cards';
 		$layouts['aao'] = 'Academic Affairs staff Cards';
+		$layouts['newsroom'] = 'News layout for Newsroom page';
+		$layouts['gallery'] = 'Gallery layout for Newsroom page';
+		$layouts['itn'] = 'In The News layout';
 
 		return $layouts;
 	}
@@ -245,10 +248,11 @@ if ( ! function_exists( 'ucfwp_post_list_display_news' ) ) {
 			$item_link = apply_filters( 'ucfwp_post_list_news_link', $item_link, $item, $posts, $atts );
 
 			$item_img = $item_img_srcset = null;
-			if ( $atts['show_image'] ) {
-				$item_img        = UCF_Post_List_Common::get_image_or_fallback( $item, 'thumbnail' );
-				$item_img_srcset = UCF_Post_List_Common::get_image_srcset( $item, 'thumbnail' );
-			}
+			// Disabled - testing replacement function
+			// if ( $atts['show_image'] ) {
+			// 	$item_img        = UCF_Post_List_Common::get_image_or_fallback( $item, 'thumbnail' );
+			// 	$item_img_srcset = UCF_Post_List_Common::get_image_srcset( $item, 'thumbnail' );
+			// }
 
 			if ( $atts['posts_per_row'] > 0 && $index !== 0 && ( $index % $atts['posts_per_row'] ) === 0 ) {
 				echo '</div><div class="row">';

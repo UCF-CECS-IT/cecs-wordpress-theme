@@ -15,7 +15,7 @@ function news_get_thumbnail($id, $size) {
         return;
     }
 
-    $default = get_the_post_thumbnail_url($id, 'thumbnail');
+    $default = get_the_post_thumbnail_url($id, $size);
 
     if ($default) {
         echo $default;

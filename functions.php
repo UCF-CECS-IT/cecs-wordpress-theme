@@ -32,9 +32,6 @@ include_once UCFWP_THEME_DIR . 'includes/news.php';
 include_once UCFWP_THEME_DIR . 'includes/in-the-news.php';
 include_once UCFWP_THEME_DIR . 'includes/faculty-showcase.php';
 
-// CECS Plugin Layout Overrides
-include_once UCFWP_THEME_DIR . 'includes/custom-plugin-layouts.php';
-
 // Plugin extras/overrides
 
 if ( class_exists( 'UCF_People_PostType' ) ) {
@@ -63,6 +60,8 @@ if ( class_exists( 'UCF_Acad_Cal_Common' ) ) {
 
 if ( class_exists( 'UCF_Post_List_Common' ) ) {
 	include_once UCFWP_THEME_DIR . 'includes/post-list-functions.php';
+	include_once UCFWP_THEME_DIR . 'includes/custom-plugin-layouts.php';
+	include_once UCFWP_THEME_DIR . 'includes/gallery-post-list-layout.php';
 }
 
 add_filter( 'http_request_host_is_external', '__return_true' );

@@ -64,5 +64,3 @@ $letter = faculty_get_letter($obj);
 	<div class="header-media-controlfix"></div>
 	<?php endif; ?>
 </div>
-
-<?php echo cecs_get_subnav_markup(); ?>

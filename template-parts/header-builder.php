@@ -94,5 +94,3 @@ if (!$images && $slideCount) {
 	<div class="header-media-controlfix"></div>
 	<?php endif; ?>
 </div>
-
-<?php echo cecs_get_subnav_markup(); ?>

@@ -57,5 +57,3 @@ $img = get_field('gallery_images')[0];
 	<div class="header-media-controlfix"></div>
 	<?php endif; ?>
 </div>
-
-<?php echo cecs_get_subnav_markup(); ?>

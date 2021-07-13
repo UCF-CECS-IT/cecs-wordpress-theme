@@ -65,4 +65,3 @@ if ($bg) {
 	<?php endif; ?>
 </div>
 
-<?php echo cecs_get_subnav_markup(); ?>

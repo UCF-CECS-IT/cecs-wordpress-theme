@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Removes the auto tagging because that is an irritating feature.
- */
-// remove_filter ('the_content', 'wpautop'); 
 
 function cecs_get_subnav_markup() {
     get_template_part( ucfwp_get_template_part_slug( 'nav' ), 'sub' );

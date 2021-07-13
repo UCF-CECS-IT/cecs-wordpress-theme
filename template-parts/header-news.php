@@ -47,4 +47,3 @@ $exclude_nav         = get_field( 'page_header_exclude_nav', $obj );
 	<?php endif; ?>
 </div>
 
-<?php echo cecs_get_subnav_markup(); ?>

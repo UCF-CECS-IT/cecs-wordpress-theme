@@ -49,5 +49,3 @@ $exclude_nav         = get_field( 'page_header_exclude_nav', $obj );
 	<div class="header-media-controlfix"></div>
 	<?php endif; ?>
 </div>
-
-<?php echo cecs_get_subnav_markup(); ?>
