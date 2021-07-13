@@ -329,31 +329,25 @@
 
 // CECS Post List Layout
 .aspect-ratio-box {
-    @include media-breakpoint-up(md) {
-        position: relative;
-    }
+    position: relative;
 }
 
 /* Create a pseudo element that uses padding-bottom to take up space */
 .aspect-ratio-box::after {
-    @include media-breakpoint-up(md) {
-        display: block;
-        content: "";
-        /* 16:9 aspect ratio */
-        padding-bottom: 56.25%;
-    }
+    display: block;
+    content: "";
+    /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
 }
 
 /* Image is positioned absolutely relative to the parent element */
 .aspect-ratio-box img {
-    @include media-breakpoint-up(md) {
-        /* Image should match parent box size */
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
-    }
+    /* Image should match parent box size */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
 }
 

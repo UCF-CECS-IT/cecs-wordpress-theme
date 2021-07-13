@@ -131,7 +131,7 @@ function ucf_post_list_display_newsroom($content, $posts, $atts)
     <?php if ($posts) : ?>
         <div class="row ucf-post-list ucfwp-post-list-news">
             <?php foreach ($posts as $index => $item):
-                $date = date("M d", strtotime($item->post_date)); ?>
+                $date = date("M d, Y", strtotime($item->post_date)); ?>
                 
                 <?php if ($index == 0): ?>
                             

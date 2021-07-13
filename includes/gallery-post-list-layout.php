@@ -42,30 +42,29 @@ function ucf_post_list_display_gallery($content, $posts, $atts)
     ob_start();
     ?>
     <?php if ($posts) : ?>
-        <div class="row">
+        <div class="row ucf-post-list ucfwp-post-list-news">
             <?php foreach ($posts as $index => $item): 
                 $img = get_field('gallery_images', $item->ID)[0];
                 ?>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <article class="h-100" id="gallery-<?php echo $item->ID; ?>">
-                        <a class="h-100 remove-pointer" href="<?php echo get_permalink($item->ID); ?>">
-                            <div class="card h-100">
-                            <div class="card-img-top card-height-set-3">
-                                <img class="img-fluid position-relative" src="<?php echo $img['sizes']['large'] ?>">
-                                <span class="badge badge-primary position-absolute position-top-right"><?php echo $item->post_title; ?></span>
+                    <article class="ucf-post-list-item" id="gallery-<?php echo $item->ID; ?>">
+                        <a class="text-secondary newsitem-link" href="<?php echo get_permalink($item->ID); ?>">
+                            <div class="aspect-ratio-box media-background-container position-relative mb-3">
+                                <img class="media-background object-fit-cover" src="<?php echo $img['sizes']['large'] ?>">
+                                <!-- <span class="badge badge-primary position-absolute position-top-right"><?php echo $item->post_title; ?></span> -->
                             </div>
-                            <div class="card-block smaller">
-                                <?php if ($item->post_content): ?>
-                                    <span class="text-secondary"><?php echo $item->post_content; ?></span>
-                                <?php else: ?>
-                                    <span class="text-secondary">No caption available</span>
-                                <?php endif; ?>
-                            </div>
+                            <h3 class="newsitem-heading"><?php echo $item->post_title; ?></h3>
+                            <?php if ($item->post_content): ?>
+                                <span class="newsitem-excerpt"><?php echo $item->post_content; ?></span>
+                            <?php else: ?>
+                                <span class="newsitem-excerpt">No caption available</span>
+                            <?php endif; ?>
+
+                            <div class="small text-default mt-2 newsitem-subhead"><?php echo date("M d, Y", strtotime($item->post_date)); ?></div>
                         </a>
                     </article>
                 </div>
             <?php endforeach; ?>
-
         </div>
 
     <?php else : ?>
