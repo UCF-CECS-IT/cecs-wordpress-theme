@@ -9,21 +9,6 @@ function cecs_get_subnav_markup() {
 }
 
 /**
- * Registers a new Wordpress menu to call in the subnav args
- *
- * @return void
- */
-function register_my_menus() {
-    register_nav_menus(
-      array(
-        // 'header-menu' => __( 'Header Menu' ),
-        'sub-menu' => __( 'Sub Menu' )
-       )
-    );
-}
-add_action( 'init', 'register_my_menus' );
-
-/**
  * Loads page- or template-specific scripts for the CECS theme
  *
  * @return void
