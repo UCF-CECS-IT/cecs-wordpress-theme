@@ -252,6 +252,10 @@ if ( ! function_exists( 'ucfwp_get_header_type' ) ) {
 			$header_type = 'faculty';
 		}
 
+		if (get_post_type() == 'faculty' && !is_archive()) {
+			$header_type = 'single-faculty';
+		}
+
 		if (get_post_type() == 'gallery' && is_archive()) {
 			$header_type = 'gallery';
 		}
@@ -291,6 +295,7 @@ if ( ! function_exists( 'ucfwp_get_header_type' ) ) {
 		if ($header_type == '') {
 			$header_type = 'fallback';
 		}
+
 
 		return apply_filters( 'ucfwp_get_header_type', $header_type, $obj );
 	}
