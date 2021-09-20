@@ -8,6 +8,14 @@
  */
 function news_get_thumbnail($id, $size) {
 
+    // First choice: get Featured Image as thumbnail
+    $default = get_the_post_thumbnail_url($id, $size);
+
+    if ($default) {
+        echo $default;
+        return;
+    }
+
     $ucftheme = wp_get_attachment_image_url( get_field( 'page_header_image', $id ), $size );
 
     if ($ucftheme) {
@@ -15,12 +23,6 @@ function news_get_thumbnail($id, $size) {
         return;
     }
 
-    $default = get_the_post_thumbnail_url($id, $size);
-
-    if ($default) {
-        echo $default;
-        return;
-    }
 
     if ($size == 'thumbnail') {
         $fallback = get_stylesheet_directory_uri() . '/static/img/fallback-thumbnail.jpg';
