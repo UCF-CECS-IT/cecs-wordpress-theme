@@ -59,6 +59,7 @@ add_filter('the_title', 'fetch_faculty_title', 10, 2);
  * @param WP_Query $query The existing WordPress query object
  */
 function cecs_faculty_query( WP_Query $query ) {
+    // Directory listing
     if( ! is_admin() && $query->is_main_query() && 
         ( $query->is_post_type_archive( 'faculty' ) || $query->is_tax( 'letter' ) ) ) {
         $query->query_vars['orderby'] = 'meta_value';

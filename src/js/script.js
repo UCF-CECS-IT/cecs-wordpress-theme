@@ -12,4 +12,3 @@
 
 // =require media-background-video.js
 // =require count-up.js
-// =require sub-menu.js

@@ -34,3 +34,12 @@ $box-shadow-color-inverse: $text-shadow-color-inverse;
 
 $rotate-left: rotate(-5deg);
 $rotate-right: rotate(5deg);
+
+$font-size-lg:   1.25rem !default;
+$font-size-md:   1rem !default; // custom
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;
+$font-size-base:    $font-size-sm !default; // modified, moved
+$font-size-base-md: $font-size-md !default; // custom
+$font-size-lg-xs:   .925rem; // custom; using non-mobile-first var name for backward compat.
+$font-size-sm-xs:   $font-size-xs; // custom; using non-mobile-first var name for backward compat.

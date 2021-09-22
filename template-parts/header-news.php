@@ -1,6 +1,8 @@
 <?php
 $obj        = ucfwp_get_queried_object();
 $images     = ucfwp_get_header_images( $obj );
+$videos     = ucfwp_get_header_videos( $obj );
+$video_loop = get_field( 'page_header_video_loop', $obj );
 $header_content_type = ucfwp_get_header_content_type( $obj );
 $header_height       = get_field( 'page_header_height', $obj );
 $exclude_nav         = get_field( 'page_header_exclude_nav', $obj );

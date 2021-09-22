@@ -101,6 +101,7 @@ function news_get_recent($count = 1) {
 function news_query_size( $query ) {
     if ( $query->is_home() && $query->is_main_query() && !is_admin() ) {
         $query->set( 'posts_per_page', 12 );
+        $query->set( 'ignore_sticky_posts', 1);
     }
 }
 add_action( 'pre_get_posts', 'news_query_size' );

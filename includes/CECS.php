@@ -23,20 +23,7 @@ function load_cecs_scripts() {
     if ( is_archive() && get_post_type() == 'faculty-showcase' ) {
         wp_enqueue_script( 'showcase-filter', get_template_directory_uri() . '/static/js/showcase-filter.js' );
     }
-
-    // Required for all pages
-
-
-    // if ( is_page() || is_single() )
-    // {
-    //     post_name is the post slug which is more consistent for matching to here
-    //     switch($post->post_name) 
-    //     {
-    //         case 'home':
-    //             wp_enqueue_script('home', get_template_directory_uri() . '/js/home.js', array('jquery'), '', false);
-    //             break;
-    //     }
-    // } 
+    
 }
 add_action( 'wp_enqueue_scripts', 'load_cecs_scripts' );
 
