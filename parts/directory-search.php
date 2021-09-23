@@ -2,6 +2,10 @@
 
 ?>
 
+<div class="row mt-3 justify-content-center" id="faculty-alphabet-list">
+    <?php faculty_alphabet_header(); ?>
+</div>
+
 <div class="row justify-content-center mt-3">
     <div class="col-lg-3 mb-2">
         <a href="/directory" class="btn btn-primary btn-block text-transform-none <?php if ($post->post_name == 'directory') { echo 'btn-secondary disabled';} else {echo 'btn-primary'; } ?>">Full Directory</a>

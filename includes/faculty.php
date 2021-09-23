@@ -28,7 +28,7 @@ function faculty_alphabet_header( $show_all = true ) {
         }
     }
     if ( $show_all ) {
-        echo '<li class="page-item"><a class="page-link bg-primary-lighter" href="'.get_post_type_archive_link( 'faculty' ).'">ALL</a></li>';
+        echo '<li class="page-item"><a class="page-link bg-primary-lighter" href="/directory/">ALL</a></li>';
     }
 
     echo '</ul></nav>';
@@ -425,3 +425,14 @@ function faculty_get_letter( $obj ) {
         return ' - '.$obj->name;
     }
 }
+
+function faculty_set_letter($post_id){
+    
+    $name = get_field('name', $post_id);
+    $name = $name[0];
+    $letter = strtoupper(substr(sanitize_title($name['last']), 0, 1));
+    wp_set_object_terms( $post_id, $letter, 'letter', false );
+    return $post_id;
+}
+
+add_action('save_post_faculty','faculty_set_letter');

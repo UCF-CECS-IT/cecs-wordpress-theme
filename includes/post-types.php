@@ -13,10 +13,6 @@
  * 		Faculty Showcase
  */
 
-
-
-
-
 /**
  * Creates custom post type for recording/displaying faculty info
  *

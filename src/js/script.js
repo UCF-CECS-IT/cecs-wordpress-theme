@@ -12,3 +12,4 @@
 
 // =require media-background-video.js
 // =require count-up.js
+// =require staff-search.js
