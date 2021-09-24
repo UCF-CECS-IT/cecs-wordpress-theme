@@ -147,6 +147,6 @@ function cecs_get_order_by_name($post) {
     } else {
         $nameString = ucfwp_get_person_name( $post );
         $nameArray = explode(' ', $nameString);
-        return $nameArray[1];
+        return end( $nameArray );
     }
 }
