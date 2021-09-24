@@ -428,7 +428,7 @@ if ( !function_exists( 'ucf_post_list_display_faculty_after' ) ) {
 }
 
 function sort_faculty_posts($a, $b) {
-	$first = explode('-', $a->post_name)[1];
-	$second = explode('-', $b->post_name)[1];
+	$first = end( explode('-', $a->post_name) );
+	$second = end( explode('-', $b->post_name) );
 	return strcasecmp($first, $second);
 }
