@@ -87,17 +87,17 @@ function ucf_post_list_display_itn($content, $posts, $atts)
         <?php foreach ($posts as $index => $item): ?>
             <div class="mb-4 ucf-post-list-item">
                 <article>
-                    <a class="d-block text-secondary newsitem-link" href="<?php echo get_field('link', $item->ID); ?>">
+                    <a class="d-block text-secondary newsitem-link" href="<?php echo get_field( 'link', $item->ID ); ?>">
                         <div>
-                            <h3 class="newsitem-heading"><?php echo get_field('headline', $item->ID); ?></h3>
+                            <h3 class="newsitem-heading"><?php echo get_field( 'headline', $item->ID ); ?></h3>
 
                             <div class="newsitem-excerpt d-flex justify-content-between">
-                                <span><?php echo get_field('news_outlet', $item->ID); ?></span>
-                                <span><?php echo get_the_time('F d, Y'); ?></span>
+                                <span><?php echo get_field( 'news_outlet', $item->ID ); ?></span>
+                                <span><?php echo get_field( 'story_date', $item->ID ); ?></span>
                             </div>
 
                             <div class="text-default mt-2 newsitem-excerpt font-italic">
-                                <?php echo get_field('author_name', $item->ID); ?>
+                                <?php echo get_field( 'author_name', $item->ID ); ?>
                             </div>
                         </div>
                     </a>
