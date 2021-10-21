@@ -20,6 +20,7 @@ if ( ! function_exists( 'ucfwp_post_list_layouts' ) ) {
 		$layouts['newsroom'] = 'News layout for Newsroom page';
 		$layouts['gallery'] = 'Gallery layout for Newsroom page';
 		$layouts['itn'] = 'In The News layout';
+		$layouts['staff_spotlight'] = 'Staff Spotlight layout';
 
 		return $layouts;
 	}

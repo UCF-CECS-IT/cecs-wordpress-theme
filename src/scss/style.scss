@@ -351,6 +351,29 @@
     object-fit: cover;
 }
 
+.aspect-ratio-square {
+    position: relative;
+}
+
+/* Create a pseudo element that uses padding-bottom to take up space */
+.aspect-ratio-square::after {
+    display: block;
+    content: "";
+    /* 16:9 aspect ratio */
+    padding-bottom: 100%;
+}
+
+/* Image is positioned absolutely relative to the parent element */
+.aspect-ratio-square img {
+    /* Image should match parent box size */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
 .font-size-sm {
     // sass-lint:disable-block no-important
     font-size: $font-size-sm-xs !important;

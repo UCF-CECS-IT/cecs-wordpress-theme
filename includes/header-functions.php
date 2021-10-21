@@ -268,7 +268,7 @@ if ( ! function_exists( 'ucfwp_get_header_type' ) ) {
 			$header_type = 'post';
 		}
 
-		if ($wp_query->query['pagename'] == 'news') {
+		if ( ($wp_query->query['pagename'] ?? null) == 'news') {
 			$header_type = 'news';
 		}
 

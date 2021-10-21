@@ -24,6 +24,7 @@ include_once UCFWP_THEME_DIR . 'includes/CECS.php';
 
 // Custom Post Type
 include_once UCFWP_THEME_DIR . 'includes/post-types.php';
+include_once UCFWP_THEME_DIR . 'includes/staff-spotlight.php';
 
 // Custom Functions
 include_once UCFWP_THEME_DIR . 'includes/faculty.php';
@@ -62,6 +63,7 @@ if ( class_exists( 'UCF_Post_List_Common' ) ) {
 	include_once UCFWP_THEME_DIR . 'includes/post-list-functions.php';
 	include_once UCFWP_THEME_DIR . 'includes/custom-plugin-layouts.php';
 	include_once UCFWP_THEME_DIR . 'includes/gallery-post-list-layout.php';
+	include_once UCFWP_THEME_DIR . 'includes/staff-spotlight-post-list-layout.php';
 }
 
 add_filter( 'http_request_host_is_external', '__return_true' );
