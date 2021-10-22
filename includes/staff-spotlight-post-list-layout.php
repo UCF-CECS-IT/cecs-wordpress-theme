@@ -46,7 +46,11 @@ function ucf_post_list_display_staff_spotlight($content, $posts, $atts)
             <?php foreach ($posts as $index => $item):
                 $date = date( "M d, Y", strtotime( $item->post_date ) ); 
                 $image = get_field( 'staff_spotlight_headshot', $item->ID );
+                $role = get_field( 'staff_spotlight_role', $item->ID );
                 
+                if ( ! $image ) {
+                    $image = get_stylesheet_directory_uri() . '/static/img/knight.png';
+                }
                 ?>
                 
                 <?php if ($index == 0): 
@@ -69,7 +73,13 @@ function ucf_post_list_display_staff_spotlight($content, $posts, $atts)
                                     </div>
 
                                     <div class="col pt-lg-4">
-                                        <h3 class="newsitem-heading"><span class="h3"><?php echo $item->post_title; ?></span></h3>
+                                        <h3 class="newsitem-heading">
+                                            <span class="h3"><?php echo $item->post_title; ?></span>
+                                            <?php if ( $role ): ?>
+                                                <br>
+                                                <small class="text-muted"><?php echo $role; ?>
+                                            <?php endif; ?>
+                                        </h3>
 
                                         <div class="newsitem-excerpt"><?php echo $extendedExcerpt; ?></div>
 
@@ -82,18 +92,22 @@ function ucf_post_list_display_staff_spotlight($content, $posts, $atts)
                             
                 <?php else: ?>
 
-                    <?php if ($index > 0 && $index < 4): ?>
-                    <div class="col-md-4 mb-4">
-                    <?php else: ?>
+                  
                     <div class="col-lg-3 col-md-4 mb-4">
-                    <?php endif; ?>
+
                         <article class="ucf-post-list-item">
                             <a class="text-secondary newsitem-link" href="<?php echo get_permalink($item->ID); ?>">
                                 <div class="aspect-ratio-square mb-3">
                                     <img src="<?php echo $image; ?>" class="img-fluid rounded" alt="<?php echo $item->post_title; ?>">
                                 </div>
 
-                                <h3 class="newsitem-heading"><?php echo $item->post_title; ?></h3>
+                                <h3 class="newsitem-heading">
+                                    <?php echo $item->post_title; ?>
+                                    <?php if ( $role ): ?>
+                                        <br>
+                                        <small class="text-muted"><?php echo $role; ?></small>
+                                    <?php endif; ?>
+                                </h3>
 
                                 <div class="newsitem-excerpt"><?php echo ucfwp_get_excerpt($item, 25); ?></div>
 
