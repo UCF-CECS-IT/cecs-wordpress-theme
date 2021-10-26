@@ -32,6 +32,7 @@ include_once UCFWP_THEME_DIR . 'includes/kmdg-translation.php';
 include_once UCFWP_THEME_DIR . 'includes/news.php';
 include_once UCFWP_THEME_DIR . 'includes/in-the-news.php';
 include_once UCFWP_THEME_DIR . 'includes/faculty-showcase.php';
+include_once UCFWP_THEME_DIR . 'includes/scholarship.php';
 
 // Plugin extras/overrides
 
