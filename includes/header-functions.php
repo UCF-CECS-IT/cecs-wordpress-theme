@@ -245,8 +245,15 @@ if ( ! function_exists( 'ucfwp_get_header_type' ) ) {
 		$header_type = '';
 		$query_count = count($wp_query->posts);
 
+		// Check first, then override with specifics
+		$videos = ucfwp_get_header_videos( $obj );
+		$images = ucfwp_get_header_images( $obj );
+		if ( $videos || $images ) {
+			$header_type = 'media';
+		}
+
 		/**
-		 * Begin custom header types
+		 * Custom header types
 		 */
 		if (get_post_type() == 'faculty' && is_archive()) {
 			$header_type = 'faculty';
@@ -279,15 +286,6 @@ if ( ! function_exists( 'ucfwp_get_header_type' ) ) {
 		if (is_search()) {
 			$header_type = 'fallback';
 		}
-		/**
-		 * End custom header types
-		 */
-
-		$videos = ucfwp_get_header_videos( $obj );
-		$images = ucfwp_get_header_images( $obj );
-		if ( $videos || $images ) {
-			$header_type = 'media';
-		}
 
 		/**
 		 * Uses the fallback header if no other header type has been set
@@ -295,7 +293,6 @@ if ( ! function_exists( 'ucfwp_get_header_type' ) ) {
 		if ($header_type == '') {
 			$header_type = 'fallback';
 		}
-
 
 		return apply_filters( 'ucfwp_get_header_type', $header_type, $obj );
 	}

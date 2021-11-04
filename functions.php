@@ -33,6 +33,7 @@ include_once UCFWP_THEME_DIR . 'includes/news.php';
 include_once UCFWP_THEME_DIR . 'includes/in-the-news.php';
 include_once UCFWP_THEME_DIR . 'includes/faculty-showcase.php';
 include_once UCFWP_THEME_DIR . 'includes/scholarship.php';
+include_once UCFWP_THEME_DIR . 'includes/grad-defense.php';
 
 // Plugin extras/overrides
 
