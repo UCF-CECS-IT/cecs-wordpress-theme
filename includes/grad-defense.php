@@ -19,7 +19,7 @@ function grad_defenses_build_array( $result ) {
         $defenseDate = date( "M j Y", strtotime( $row['date'] ) );
 
         $submissionArray[$defenseDate][] = array(
-            'id' => $row['id'],
+            'ID' => $row['ID'],
             'date' => $row['date'],
             'department' => $row['department'],
             'fname' => $row['fname'],
