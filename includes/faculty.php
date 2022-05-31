@@ -186,7 +186,7 @@ function faculty_get_photo( $id = null ) {
         return wp_get_attachment_url( $thumbnail_id );
     }
 
-    return get_stylesheet_directory_uri() . '/static/img/knight.png';
+    return get_stylesheet_directory_uri() . '/static/img/pegasus.jpg';
 }
 
 /**

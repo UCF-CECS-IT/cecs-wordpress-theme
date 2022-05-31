@@ -6,9 +6,7 @@ $metaArray = get_metadata('post', $post->ID);
 $positionArray = faculty_get_positions($metaArray);
 $educationArray = faculty_get_education($metaArray);
 $publicationsArray = faculty_get_publications($metaArray);
-// echo '<pre>';
-// print_r($positionArray);
-// echo '</pre>';
+
 ?>
 
 <article class="<?php echo $post->post_status; ?> post-list-item">
@@ -168,21 +166,21 @@ $publicationsArray = faculty_get_publications($metaArray);
                     <div id="webCollapse" class="collapse" role="tabpanel" aria-labelledby="webCollapse" data-parent="#accordion">
                         <table class="table">
                             <tr>
-                                <?php if ($metaArray['website'][0]): ?>
+                                <?php if ($metaArray['website'][0] ?? false): ?>
                                     <th>Website:</th>
                                     <td><?php echo faculty_get_website($metaArray);?></td>
                                 <?php endif; ?>
                             </tr>
 
                             <tr>
-                                <?php if ($metaArray['youtube_link'][0]): ?>
+                                <?php if ($metaArray['youtube_link'][0] ?? false): ?>
                                     <th>YouTube:</th>
                                     <td><?php echo faculty_get_social($metaArray, 'youtube');?></td>
                                 <?php endif; ?>
                             </tr>
 
                             <tr>
-                                <?php if ($metaArray['twitter_url'][0]): ?>
+                                <?php if ($metaArray['twitter_url'][0] ?? false): ?>
                                     <th>Twitter:</th>
                                     <td><?php echo faculty_get_social($metaArray, 'twitter');?></td>
                                 <?php endif; ?>
