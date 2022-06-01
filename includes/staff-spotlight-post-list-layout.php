@@ -77,7 +77,7 @@ function ucf_post_list_display_staff_spotlight($content, $posts, $atts)
                                             <span class="h3"><?php echo $item->post_title; ?></span>
                                             <?php if ( $role ): ?>
                                                 <br>
-                                                <small class="text-muted"><?php echo $role; ?>
+                                                <small class="text-muted"><?php echo $role; ?></small>
                                             <?php endif; ?>
                                         </h3>
 
