@@ -49,9 +49,9 @@
 //
 .ucfwp-post-list-news {
   .newsitem-link {
-    @include hover-focus {
-      text-decoration: none;
+    text-decoration: none;
 
+    @include hover-focus {
       .newsitem-heading {
         text-decoration: underline;
       }
