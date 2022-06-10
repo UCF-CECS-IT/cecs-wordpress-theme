@@ -172,7 +172,7 @@ gulp.task('move-components-athena-fonts', (done) => {
 
 // Run all component-related tasks
 gulp.task('components', gulp.parallel(
-  'move-components-fontawesome-4',
+  // 'move-components-fontawesome-4',
   'move-components-fontawesome-5',
   'move-components-athena-fonts'
 ));
@@ -219,7 +219,7 @@ gulp.task('css', gulp.series(
   'scss-lint-theme',
   'scss-build-theme',
   // 'scss-build-fa4',
-  // 'scss-build-fa5'
+  'scss-build-fa5'
 ));
 
 

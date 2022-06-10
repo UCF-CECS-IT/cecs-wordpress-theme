@@ -14,10 +14,11 @@ function ucfwp_enqueue_frontend_assets() {
 	}
 
 	// Register main theme stylesheet
-	$theme = wp_get_theme( 'UCF-WordPress-Theme' );
+	$theme = wp_get_theme( 'cecs-wordpress-theme' );
 	$theme_version = ( $theme instanceof WP_Theme ) ? $theme->get( 'Version' ) : false;
 
 	wp_enqueue_style( 'style', UCFWP_THEME_CSS_URL . '/style.min.css', null, $theme_version );
+	wp_enqueue_style( 'font-awesome', UCFWP_THEME_CSS_URL . '/font-awesome-5.min.css', null, $theme_version );
 
 	wp_enqueue_script( 'ucf-header', '//universityheader.ucf.edu/bar/js/university-header.js?use-1200-breakpoint=1', null, null, true );
 	wp_enqueue_script( 'wp-a11y' );
@@ -31,7 +32,7 @@ function ucfwp_enqueue_frontend_assets() {
 	) );
 }
 
-add_action( 'wp_enqueue_scripts', 'ucfwp_enqueue_frontend_assets' );
+add_action( 'wp_enqueue_scripts', 'ucfwp_enqueue_frontend_assets', 2 );
 
 
 /**

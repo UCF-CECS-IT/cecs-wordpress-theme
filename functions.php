@@ -1,6 +1,6 @@
 <?php
 define( 'UCFWP_THEME_DIR', trailingslashit( get_template_directory() ) );
-
+define( 'CURRENT_VERSION', '1.0.35' );
 
 // Deprecated functions
 include_once UCFWP_THEME_DIR . 'includes/deprecated.php';
